@@ -1,0 +1,351 @@
+{
+	"info": {
+		"_postman_id": "00338178-cd40-4bb4-a5e9-ee5361e3e7b7",
+		"name": "Curso Api Asp Core",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Livros",
+			"item": [
+				{
+					"name": "Recuperar livro pelo id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/csv",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/Livros/6002",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Livros",
+								"6002"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista de livros",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/csv",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/Livros",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Livros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar livro",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 5002,\r\n    \"titulo\": \"Outro livro ALTERADO\",\r\n    \"subtitulo\": \"Another\",\r\n    \"autor\": \"Alguém\",\r\n    \"resumo\": \"Baita livro...\",\r\n    \"capa\": null,\r\n    \"lista\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/Livros",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Livros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apagar livro",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/Livros/5002",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Livros",
+								"5002"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar livro",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\": \"Outro livro\",\r\n    \"subtitulo\": \"Another\",\r\n    \"autor\": \"Alguém\",\r\n    \"resumo\": \"Baita livro...\",\r\n    \"capa\": null,\r\n    \"lista\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/Livros",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Livros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Recupera capa do livro",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/livros/1/capa",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"livros",
+								"1",
+								"capa"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Listas de leituras",
+			"item": [
+				{
+					"name": "Listas de leitura",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/ListasLeitura",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"ListasLeitura"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listas de leitura pelo tipo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "123",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/ListasLeitura/Lidos",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"ListasLeitura",
+								"Lidos"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"login\": \"admin\",\n\t\"password\": 123\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url-provider}}/api/Login",
+					"host": [
+						"{{url-provider}}"
+					],
+					"path": [
+						"api",
+						"Login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
